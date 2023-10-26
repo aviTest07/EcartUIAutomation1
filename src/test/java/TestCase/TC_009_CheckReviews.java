@@ -12,19 +12,20 @@ import PageObject.MyAccount;
 public class TC_009_CheckReviews extends BaseClass
 {
 	
-	LandingPage pr = new LandingPage(driver);
+	 LandingPage  pr = new LandingPage(driver);
  
 	@Test(priority= 1)
-	public void checkReviewdetails() throws InterruptedException
+	public void  checkReviewdetails() throws InterruptedException
 	{
 		LoginPage lp=new LoginPage(driver);
 		MyAccount account=new MyAccount(driver);
 	 	lp.clickSignIn();
-	 	 pr =lp.signingIn(prop.getProperty("username"),prop.getProperty("passWord"));
+	 	 pr =lp.signingIn(prop.getProperty("email"),prop.getProperty("password"));
 	 	account.selectdropdown();
-	    String countofreview= account.getReviewItem();
-	    countofreview = countofreview.replaceAll("[^0-9]","");
-	    Assert.assertEquals(countofreview,prop.getProperty("countofreview"));
+	    String countofreviewbefore= account.getReviewItem();
+	    countofreviewbefore = countofreviewbefore.replaceAll("[^0-9]","");
+	    
+	    Assert.assertEquals(countofreviewbefore,prop.getProperty("countofreview"));
 	}
 	
 	
