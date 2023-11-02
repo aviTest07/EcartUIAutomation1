@@ -10,7 +10,8 @@ package Base;
 	import java.io.IOException;
 	import java.text.SimpleDateFormat;
 	import java.time.Duration;
-	import java.util.Date;
+import java.util.ArrayList;
+import java.util.Date;
 	import java.util.Properties;
 	import java.util.ResourceBundle;
 	import java.util.logging.LogManager;
@@ -25,7 +26,8 @@ package Base;
 	import org.openqa.selenium.chrome.ChromeDriver;
 	import org.openqa.selenium.chrome.ChromeOptions;
 	import org.openqa.selenium.edge.EdgeDriver;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 	import org.testng.annotations.AfterClass;
 	import org.testng.annotations.BeforeClass;
@@ -38,16 +40,26 @@ package Base;
 	public class BaseClass 
 	{
 		
-		public static WebDriver driver;
+		public WebDriver driver;
 		public static Logger logger;
 		public static Properties prop;
 		public static ResourceBundle rb;
 		public static FileInputStream  fis;
 		public WebDriverWait wait;
 		
+		
+		
+		/*public BaseClass(WebDriver driver)
+		{
+			this.driver=driver;
+			PageFactory.initElements(driver,this);
+			
+		}
+		*/
+		
 		@Parameters("browser")
 		@BeforeClass
-		public void setup(@Optional("edge")String browser) throws IOException
+		public void setup(@Optional("chrome")String browser) throws IOException
 		{
 			//logger=LogManager.getLogger(this.getClass());  //logging
 			
@@ -84,7 +96,7 @@ package Base;
 				
 			
 			
-		driver= new EdgeDriver();
+		driver= new ChromeDriver();
 
 			
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -97,8 +109,17 @@ package Base;
 			driver.manage().window().maximize();		
 		}
 
-		
-		
+		public	boolean checkSorting(ArrayList< Integer > arraylist)
+		{
+			boolean isSorted=true;
+		    for(int i=1;i < arraylist.size();i++){
+		        if(arraylist.get(i-1).compareTo(arraylist.get(i)) > 0){
+		            isSorted= false;
+		            break;
+		        }
+		    }
+		    return isSorted;
+		}
 		
 		public String captureScreenShot(String testname)
 		{
@@ -117,7 +138,7 @@ package Base;
 			return destination;
 		}
 		
-		public  static void waitForElement(By by)
+		public   void waitForElement(By by)
 		{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));

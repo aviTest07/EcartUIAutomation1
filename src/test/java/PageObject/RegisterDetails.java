@@ -5,13 +5,16 @@
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-	import Base.BasePage;
+import Base.BaseClass;
+import Base.BasePage;
 
-	public class RegisterDetails extends BasePage
+	public class RegisterDetails extends BaseClass
 	{
 		public RegisterDetails(WebDriver driver) {
-			super(driver);
+              this.driver=driver;
+              PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
 		

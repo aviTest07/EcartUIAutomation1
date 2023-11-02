@@ -3,6 +3,7 @@
 
 	import org.openqa.selenium.By;
 
+
 	import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 	import org.testng.Assert;
@@ -19,7 +20,7 @@
 		
 		public static LandingPage pg;
 		public static CartPage cp;
-		MyWishList mywishlis=new MyWishList(driver);
+		public static MyWishList mywishlis;
 		
 		@Test(priority = 1)
 		public void login() throws Exception
@@ -36,6 +37,7 @@
 		public void verifySerchItem() throws InterruptedException
 		{
 			pg=new LandingPage(driver);
+			mywishlis=new MyWishList(driver);
 			
 			pg.searching(prop.getProperty("serachText"),prop.getProperty("serachItem"));
 			

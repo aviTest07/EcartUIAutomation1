@@ -10,16 +10,18 @@ package PageObject;
 	import org.openqa.selenium.interactions.Action;
 	import org.openqa.selenium.interactions.Actions;
 	import org.openqa.selenium.support.FindBy;
-	import org.testng.Assert;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 	import Base.BaseClass;
 	import Base.BasePage;
 
-	public class MyAccount extends BasePage
+	public class MyAccount extends BaseClass
 	{
 
 		public MyAccount(WebDriver driver) {
-			super(driver);
+			this.driver=driver;
+			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -80,7 +82,7 @@ package PageObject;
 		public void enterarating() throws InterruptedException
 		{
 			reviews.click();
-			BaseClass.waitForElement(ratings);
+			waitForElement(ratings);
 			//Thread.sleep(5000);
 			Actions act=new Actions(driver);
 			act.moveToElement(rating).build().perform();

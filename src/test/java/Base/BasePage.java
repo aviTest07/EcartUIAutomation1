@@ -13,13 +13,13 @@ public class BasePage
 
 	public WebDriver driver;
 	
-	
-	public BasePage(WebDriver driver)
+	/*public BasePage(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 		
 	}
+	*/
 	
 public	boolean checkSorting(ArrayList< Integer > arraylist)
 {
