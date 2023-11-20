@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCase.TC_005_Add_To_Cart">
+      <class name="TestCase.TC_011_LoginDataCredetials">
         <methods>
-          <include name="checktextBox"/>
-          <include name="verifySerchItem"/>
           <include name="tearDown"/>
+          <include name="checkCredentails" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- TestCase.TC_005_Add_To_Cart -->
+      </class> <!-- TestCase.TC_011_LoginDataCredetials -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
