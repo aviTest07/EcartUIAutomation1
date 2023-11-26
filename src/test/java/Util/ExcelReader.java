@@ -49,7 +49,6 @@ package Util;
 		
 		public String getCelldata(int rownum,int colnum) throws IOException
 		{
-			
 			 row=sheet.getRow(rownum);
 			 cell=row.getCell(colnum);
 			 DataFormatter formatter = new DataFormatter();

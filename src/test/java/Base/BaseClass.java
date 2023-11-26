@@ -40,15 +40,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 	public class BaseClass 
 	{
 		
-		public WebDriver driver;
+		public static WebDriver driver;
 		public static Logger logger;
 		public static Properties prop;
 		public static ResourceBundle rb;
 		public static FileInputStream  fis;
 		public WebDriverWait wait;
-		
-		
-		
 		/*public BaseClass(WebDriver driver)
 		{
 			this.driver=driver;
@@ -88,14 +85,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 				chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
 				
 			}
-			
 			else
 			{
 				
 			}
-				
-			
-			
 		driver= new ChromeDriver();
 
 			

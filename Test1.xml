@@ -1,0 +1,13 @@
+<suite name="Suite">
+<listeners>
+<listener class-name="Util.ListenerClass"/>
+</listeners>
+<test thread-count="5" name="Test">
+<classes>
+<class name="TestCase.TC_011_LoginDataCredetials"/>
+<class name="TestCase.TC_001_AccountCreation"/>
+</classes>
+</test>
+<!--  Test  -->
+</suite>
+<!--  Suite  -->
