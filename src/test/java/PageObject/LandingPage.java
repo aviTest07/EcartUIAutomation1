@@ -18,14 +18,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.Select;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 
-	import Base.BasePage;
+import Base.BaseClass;
+import Base.BasePage;
 
-	public class LandingPage extends BasePage {
+	public class LandingPage extends BaseClass {
 		
 		
 
 		public LandingPage(WebDriver driver) {
-			this.driver=driver;
+		//	this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}

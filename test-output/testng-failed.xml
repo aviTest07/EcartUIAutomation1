@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCase.TC_005_Add_To_Cart">
+      <class name="TestCase.TC_004_VerifyCount">
         <methods>
-          <include name="checktextBox"/>
-          <include name="verifySerchItem"/>
+          <include name="verifyCount"/>
+          <include name="verifyWishListItem"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- TestCase.TC_005_Add_To_Cart -->
+      </class> <!-- TestCase.TC_004_VerifyCount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
