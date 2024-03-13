@@ -39,7 +39,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 	public class BaseClass 
 	{
-		
 		public static WebDriver driver;
 		public static Logger logger;
 		public static Properties prop;

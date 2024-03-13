@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-20T14:02:23 IST" name="Default suite" finished-at="2023-12-20T14:02:44 IST" duration-ms="20316">
+  <suite started-at="2024-03-13T20:46:41 IST" name="Default suite" finished-at="2024-03-13T20:48:32 IST" duration-ms="110323">
     <groups>
     </groups>
-    <test started-at="2023-12-20T14:02:23 IST" name="Default test" finished-at="2023-12-20T14:02:44 IST" duration-ms="20316">
-      <class name="TestCase.TC_004_VerifyCount">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:23 IST" name="setup" finished-at="2023-12-20T14:02:31 IST" duration-ms="7585" status="PASS">
+    <test started-at="2024-03-13T20:46:41 IST" name="Default test" finished-at="2024-03-13T20:48:32 IST" duration-ms="110323">
+      <class name="TestCase.TC_011_LoginDataCredetials">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:46:41 IST" name="setup" finished-at="2024-03-13T20:47:09 IST" duration-ms="27475" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,24 +18,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:31 IST" name="login" finished-at="2023-12-20T14:02:34 IST" duration-ms="3253" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyCount()[pri:2, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:34 IST" name="verifyCount" finished-at="2023-12-20T14:02:40 IST" duration-ms="5403" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:47:10 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:47:26 IST" duration-ms="16494" status="FAIL">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[expected [12] but found [11]]]>
+              <![CDATA[Keys to send should be a not null CharSequence]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [12] but found [11]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at TestCase.TC_004_VerifyCount.verifyCount(TC_004_VerifyCount.java:41)
+              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)
+at PageObject.LoginPage.signingIn(LoginPage.java:43)
+at TestCase.TC_011_LoginDataCredetials.checkCredentails(TC_011_LoginDataCredetials.java:22)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -66,67 +75,120 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCount -->
-        <test-method signature="checkSortingoptions()[pri:3, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:40 IST" name="checkSortingoptions" finished-at="2023-12-20T14:02:41 IST" duration-ms="1461" status="PASS">
+        </test-method> <!-- checkCredentails -->
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:47:26 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:48:07 IST" duration-ms="41137" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[avinash1@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkSortingoptions -->
-        <test-method signature="verifyWishListItem()[pri:4, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:41 IST" name="verifyWishListItem" finished-at="2023-12-20T14:02:43 IST" duration-ms="2332" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.] but found []
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at TestCase.TC_004_VerifyCount.verifyWishListItem(TC_004_VerifyCount.java:60)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:136)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:658)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:219)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:923)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:192)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-at org.testng.TestNG.runSuites(TestNG.java:1092)
-at org.testng.TestNG.run(TestNG.java:1060)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- checkCredentails -->
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:48:07 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:48:14 IST" duration-ms="6491" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sourav1@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Chetu@1231]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWishListItem -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCase.TC_004_VerifyCount@55a147cc]" started-at="2023-12-20T14:02:43 IST" name="tearDown" finished-at="2023-12-20T14:02:44 IST" duration-ms="238" status="PASS">
+        </test-method> <!-- checkCredentails -->
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:48:14 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:48:20 IST" duration-ms="5997" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test2@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCredentails -->
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:48:20 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:48:25 IST" duration-ms="5589" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DigVijay23@Yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCredentails -->
+        <test-method signature="checkCredentails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:48:25 IST" name="checkCredentails" data-provider="verifylogincredntials" finished-at="2024-03-13T20:48:31 IST" duration-ms="5883" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[avi07monu@outlook.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCredentails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCase.TC_011_LoginDataCredetials@1a6d8329]" started-at="2024-03-13T20:48:31 IST" name="tearDown" finished-at="2024-03-13T20:48:31 IST" duration-ms="328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestCase.TC_004_VerifyCount -->
+      </class> <!-- TestCase.TC_011_LoginDataCredetials -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 20 14:02:23 IST 2023</td>
+<td>Started on:</td><td>Wed Mar 13 20:46:41 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20316 ms)</td>
+<tr><td>Total time:</td><td>110 seconds (110323 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCase.TC_004_VerifyCount.verifyCount()'><b>verifyCount</b><br>Test class: TestCase.TC_004_VerifyCount</td>
-<td><div><pre>java.lang.AssertionError: expected [12] but found [11]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at TestCase.TC_004_VerifyCount.verifyCount(TC_004_VerifyCount.java:41)
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: null, null, null</td>
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)
+	at PageObject.LoginPage.signingIn(LoginPage.java:43)
+	at TestCase.TC_011_LoginDataCredetials.checkCredentails(TC_011_LoginDataCredetials.java:22)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,93 +114,17 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace803149788", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace803149788'><pre>java.lang.AssertionError: expected [12] but found [11]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at TestCase.TC_004_VerifyCount.verifyCount(TC_004_VerifyCount.java:41)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1330143761", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1330143761'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:136)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:658)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:219)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:923)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:192)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.runSuites(TestNG.java:1092)
-	at org.testng.TestNG.run(TestNG.java:1060)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>5</td>
-<td>TestCase.TC_004_VerifyCount@55a147cc</td></tr>
-<tr>
-<td title='TestCase.TC_004_VerifyCount.verifyWishListItem()'><b>verifyWishListItem</b><br>Test class: TestCase.TC_004_VerifyCount</td>
-<td><div><pre>java.lang.AssertionError: expected [Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.] but found []
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at TestCase.TC_004_VerifyCount.verifyWishListItem(TC_004_VerifyCount.java:60)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:136)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:658)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:219)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:923)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:192)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.runSuites(TestNG.java:1092)
-	at org.testng.TestNG.run(TestNG.java:1060)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace100393301", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace100393301'><pre>java.lang.AssertionError: expected [Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.] but found []
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at TestCase.TC_004_VerifyCount.verifyWishListItem(TC_004_VerifyCount.java:60)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)
+	at PageObject.LoginPage.signingIn(LoginPage.java:43)
+	at TestCase.TC_011_LoginDataCredetials.checkCredentails(TC_011_LoginDataCredetials.java:22)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -228,8 +154,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>2</td>
-<td>TestCase.TC_004_VerifyCount@55a147cc</td></tr>
+<td>16</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -239,15 +165,30 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCase.TC_004_VerifyCount.login()'><b>login</b><br>Test class: TestCase.TC_004_VerifyCount</td>
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: Sourav1@yopmail.com, Chetu@1231, Valid</td>
 <td></td>
-<td>3</td>
-<td>TestCase.TC_004_VerifyCount@55a147cc</td></tr>
+<td>6</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
 <tr>
-<td title='TestCase.TC_004_VerifyCount.checkSortingoptions()'><b>checkSortingoptions</b><br>Test class: TestCase.TC_004_VerifyCount</td>
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: DigVijay23@Yopmail.com, Test@123, Valid</td>
 <td></td>
-<td>1</td>
-<td>TestCase.TC_004_VerifyCount@55a147cc</td></tr>
+<td>5</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
+<tr>
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: avinash1@yopmail.com, Test@123, Valid</td>
+<td></td>
+<td>41</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
+<tr>
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: Test2@yopmail.com, Test@123, Valid</td>
+<td></td>
+<td>5</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
+<tr>
+<td title='TestCase.TC_011_LoginDataCredetials.checkCredentails()'><b>checkCredentails</b><br>Test class: TestCase.TC_011_LoginDataCredetials<br>Parameters: avi07monu@outlook.com, Test@123, Valid</td>
+<td></td>
+<td>5</td>
+<td>TestCase.TC_011_LoginDataCredetials@1a6d8329</td></tr>
 </table><p>
 </body>
 </html>

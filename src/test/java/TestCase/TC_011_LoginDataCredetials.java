@@ -23,7 +23,7 @@ public void checkCredentails(String username,String password,String exp) throws 
 		
 		String targetpage = driver.getTitle();
 		
-			if (exp.equals("Valid")) 
+		if (exp.equals("Valid")) 
 				if(targetpage.equalsIgnoreCase("Home Page")|| targetpage.equalsIgnoreCase("My Account"))
 	{	
 				rd.logoutuser();
@@ -33,17 +33,16 @@ public void checkCredentails(String username,String password,String exp) throws 
 			{
 			Assert.assertTrue(false);
 			}			
-		if (exp.equals("InValid")) 
+		else  if(exp.equals("InValid")) 
 		{
-			if(targetpage.equalsIgnoreCase("Customer Login"))
+			if(targetpage.equalsIgnoreCase("Customer Login")) {
 			lp.clickSignIn();
-			
 			Assert.assertFalse(false);
+			}
+		
 		}
-		else
-		{
-		Assert.assertFalse(false);
-		}
+			
+		 
 	
 	
 }	

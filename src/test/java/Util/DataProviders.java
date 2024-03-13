@@ -16,21 +16,18 @@ package Util;
 		public String[][] getData() throws IOException
 		{
 			System.out.println(path);
-			
 			ExcelReader exceldata=new ExcelReader(path,"AccountCreationData");
 			int totalrows=exceldata.getRowCount();	
 			System.out.println(totalrows);
-			
-			int totalcols=exceldata.getCellCount(5);
+			int totalcols=exceldata.getCellCount(totalrows);
 			System.out.println(totalcols);
-			
 			String logindata[][]=new String[totalrows][totalcols]; //created for two dimension array which can store the data user and password
 			
 			for (int i=1;i<totalrows;i++)//read the data from xl storing in two deminsional array
 			{
-				for (int j=0;j<totalcols;j++)//0    i is rows j is col
+				for (int j=0;j<totalcols;j++)//0   i is rows j is col
 				{
-					logindata[i][j]=exceldata.getCelldata( i, j);//1,0
+					logindata[i][j]=exceldata.getCelldata(i,j);//1,0
 				}
 			}
 			return logindata;
@@ -41,17 +38,14 @@ package Util;
 			ExcelReader exceldata=new ExcelReader(path,"TestCredentials");
 			int totalrows=exceldata.getRowCount();	
 			System.out.println(totalrows);
-			
-			int totalcols=exceldata.getCellCount(0);
+			int totalcols=exceldata.getCellCount(totalrows-1);
 			System.out.println(totalcols);
-			
 			String loginCred[][]=new String[totalrows][totalcols]; //created for two dimension array which can store the data user and password
-			
 			for (int i=1;i<totalrows;i++)//read the data from xl storing in two deminsional array
 			{
 				for (int j=0;j<totalcols;j++)//0    i is rows j is col
 				{
-					loginCred[i][j]=exceldata.getCelldata( i, j);//1,0
+					loginCred[i][j]=exceldata.getCelldata(i,j);//1,0
 				}
 			}
 			return loginCred;

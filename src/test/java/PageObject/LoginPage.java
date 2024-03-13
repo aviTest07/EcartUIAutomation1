@@ -2,21 +2,17 @@ package PageObject;
 
 
 
-	import org.openqa.selenium.WebDriver;
-
-	import java.awt.Color;
-	import javax.swing.*;
+	import org.openqa.selenium.WebDriver;	
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import Base.BaseClass;
-import Base.BasePage;
+    import org.openqa.selenium.support.PageFactory;
+    import Base.BaseClass;
+//import Base.BasePage;
 
 	public class LoginPage extends BaseClass
 	{
 		public LoginPage(WebDriver driver) {
-			this.driver=driver;
+			//this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
@@ -81,7 +77,6 @@ import Base.BasePage;
 			return false;
 			 
 		}
-		
 		public boolean  Verify_PWDfieldsAreAligned_SameRow() {
 			int emaillen= emailId.getLocation().getY();
 			int passlen= pass.getLocation().getY();
@@ -93,12 +88,4 @@ import Base.BasePage;
 			return false;
 			 
 		}
-		
-	
-
-		
-
-
-
-
-}
+		}

@@ -14,14 +14,12 @@ package Util;
 
 	public class ExcelReader 
 	{
-		
 		 public String path;
-		public FileInputStream fis;
-		public XSSFWorkbook wb;
-		public XSSFSheet sheet;
-		public XSSFRow row;
-		public XSSFCell cell;
-
+		public  FileInputStream fis;
+		public   XSSFWorkbook wb;
+		public  XSSFSheet sheet;
+		public  XSSFRow row;
+		public  XSSFCell cell;
 		public ExcelReader(String path,String sheetName) throws IOException
 		{
 			this.path=path;
@@ -30,23 +28,20 @@ package Util;
 			wb=new XSSFWorkbook(fis);
 			sheet = wb.getSheet(sheetName);
 		}
-		
 		public int getRowCount() throws IOException
 		{
-		  int rowcount=sheet.getLastRowNum();
+		  int rowcount=sheet.getPhysicalNumberOfRows();
 		
 			return rowcount;	
-		}
+		} 
 		
 		public int getCellCount(int rownum) throws IOException
 		{
 			row=sheet.getRow(rownum);
-			    int cellcount = row.getLastCellNum();
-			   
-			return cellcount;
+			int cellcount = row.getLastCellNum();
 			
+			return cellcount;	
 		}
-		
 		public String getCelldata(int rownum,int colnum) throws IOException
 		{
 			 row=sheet.getRow(rownum);
@@ -64,16 +59,4 @@ package Util;
 				fis.close();
 				return data;	
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-
-}
+		}
