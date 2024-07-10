@@ -6,7 +6,7 @@
       <class name="TestCase.TC_011_LoginDataCredetials">
         <methods>
           <include name="tearDown"/>
-          <include name="checkCredentails" invocation-numbers="0"/>
+          <include name="checkCredentails" invocation-numbers="0 1 2 3 4 5"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestCase.TC_011_LoginDataCredetials -->
