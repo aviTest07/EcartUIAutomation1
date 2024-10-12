@@ -49,12 +49,10 @@ import Base.BasePage;
 		@FindBy(xpath="//a[@class='product-item-link']")
 		List <WebElement> searchedProductList;
 		
-		
+	//By by=By.cssSelector(null);
 		
 		@FindBy(xpath="//li[contains(@id,'qs-option')]")
 		List <WebElement> productList;
-		
-		
 		
 		
 		public ArrayList<String> verifytopMenu()
@@ -76,7 +74,8 @@ import Base.BasePage;
 			ac.moveToElement(menSection).build().perform();
 			ac.moveToElement(mensTop).build().perform();	
 			ac.moveToElement(jackets).click().perform();
-			Thread.sleep(2000);
+		wait.until(ExpectedConditions.titleContains(driver.getTitle()));
+			//Thread.sleep(2000);
 			 
 			return new ProductsPage(driver);
 		}
@@ -84,8 +83,8 @@ import Base.BasePage;
 		{
 			searchButton.sendKeys(serachText);
 		   
-			
-		   Thread.sleep(3000);
+       wait.until(ExpectedConditions.visibilityOfAllElements(productList));			
+
 		for(WebElement list:productList)
 			{
 				Thread.sleep(3000);

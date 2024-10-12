@@ -5,6 +5,7 @@ package Base;
 	import java.io.File;
 
 
+
 	import java.io.FileInputStream;
 
 	import java.io.IOException;
@@ -30,7 +31,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 	import org.testng.annotations.AfterClass;
-	import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 	import org.testng.annotations.Optional;
 	import org.testng.annotations.Parameters;
 	import org.testng.annotations.Test;
@@ -44,17 +50,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 		public static Properties prop;
 		public static ResourceBundle rb;
 		public static FileInputStream  fis;
-		public WebDriverWait wait;
+		public static WebDriverWait wait;
 		/*public BaseClass(WebDriver driver)
 		{
 			this.driver=driver;
-			PageFactory.initElements(driver,this);
-			
+			PageFactory.initElements(driver,this);	
 		}
 		*/
 		
 		@Parameters("browser")
-		@BeforeClass
+		@BeforeSuite
 		public void setup(@Optional("chrome")String browser) throws IOException
 		{
 			//logger=LogManager.getLogger(this.getClass());  //logging
@@ -67,6 +72,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 			prop=new Properties();
 			prop.load(fis);
 			
+			
+			
 			if(browser.equalsIgnoreCase("edge"))
 			{	
 			System.setProperty("Webdriver.edge.driver",System.getProperty("user.dir") +"\\Driver\\msedgedriver.exe");
@@ -75,7 +82,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 			//chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
 			}
-			else if(browser.equalsIgnoreCase("firefox"))
+			else if(browser.equalsIgnoreCase("chrome"))
 			{
 				System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir") +"\\src\\test\\Resources\\Drivers\\chromedriver.exe");
 				
@@ -83,16 +90,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 				chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
 				
+				WebDriverManager.chromedriver().setup();
+				driver= new ChromeDriver();
 			}
 			else
 			{
 				
 			}
-		driver= new ChromeDriver();
+		
 
 			
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 			driver.get(prop.getProperty("url"));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 			
 			// OR we can use ResourceBundle to use property file.
 			
@@ -132,14 +142,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 		
 		public   void waitForElement(By by)
 		{
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		}
 		
-		
-		
-		
-		@AfterClass
+		@AfterSuite
 		public void tearDown()
 		{
 			driver.quit();

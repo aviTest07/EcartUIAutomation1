@@ -22,7 +22,7 @@ import Base.BasePage;
 			// TODO Auto-generated constructor stub
 		}
 		
-		@FindBy(xpath="//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+		@FindBy(xpath="//div[normalize-space(text())='Proteus Fitness Jackshirt has been added to your Wish List. Click']")
 		WebElement  wishlistSuccess;
 		
 		@FindBy(xpath="//a[@class='product-item-link']")

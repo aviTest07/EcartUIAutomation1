@@ -55,8 +55,6 @@ public class TC_004_VerifyCount extends BaseClass
 	{
 		prod= new ProductsPage(driver);
 		wishlist=prod.wishList();
-		
-		
 		Assert.assertEquals(wishlist.verifySuccessMessage(),"Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.");
 	}
 	

@@ -18,7 +18,7 @@
 	public class TC_005_Add_To_Cart extends BaseClass 
 	{
 		
-		public static LandingPage pg;
+	public static LandingPage pg;
 		public static CartPage cp;
 		public static MyWishList mywishlis;
 		

@@ -6,22 +6,24 @@
   </listeners>
   <test thread-count="5" parallel="tests" name="Test(failed)">
     <classes>
+      <class name="TestCase.TC_006_CompareProdusts">
+        <methods>
+          <include name="compareItems"/>
+          <include name="tearDown"/>
+          <include name="login"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCase.TC_006_CompareProdusts -->
       <class name="TestCase.TC_004_VerifyCount">
         <methods>
           <include name="verifyCount"/>
+          <include name="verifyWishListItem"/>
           <include name="checkSortingoptions"/>
           <include name="tearDown"/>
+          <include name="login"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestCase.TC_004_VerifyCount -->
-      <class name="TestCase.TC_001_AccountCreation">
-        <methods>
-          <include name="validationmesasge"/>
-          <include name="accountCreation"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCase.TC_001_AccountCreation -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

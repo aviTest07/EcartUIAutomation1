@@ -5,10 +5,14 @@
 </listeners>
 <test thread-count="5" name="Test">
 <classes>
+
+<class name="TestCase.TC_006_CompareProdusts"/>
 <class name="TestCase.TC_004_VerifyCount"/>
-<class name="TestCase.TC_001_AccountCreation"/>
 </classes>
 </test>
+
+
+
 <!--  Test  -->
 </suite>
 <!--  Suite  -->

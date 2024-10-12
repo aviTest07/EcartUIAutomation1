@@ -23,7 +23,7 @@ package Util;
 			System.out.println(totalcols);
 			String logindata[][]=new String[totalrows][totalcols]; //created for two dimension array which can store the data user and password
 			
-			for (int i=1;i<totalrows;i++)//read the data from xl storing in two deminsional array
+			for (int i=0;i<totalrows;i++)//read the data from xl storing in two deminsional array
 			{
 				for (int j=0;j<totalcols;j++)//0   i is rows j is col
 				{
@@ -41,7 +41,7 @@ package Util;
 			int totalcols=exceldata.getCellCount(totalrows-1);
 			System.out.println(totalcols);
 			String loginCred[][]=new String[totalrows][totalcols]; //created for two dimension array which can store the data user and password
-			for (int i=1;i<totalrows;i++)//read the data from xl storing in two deminsional array
+			for (int i=0;i<totalrows;i++)//read the data from xl storing in two deminsional array
 			{
 				for (int j=0;j<totalcols;j++)//0    i is rows j is col
 				{
