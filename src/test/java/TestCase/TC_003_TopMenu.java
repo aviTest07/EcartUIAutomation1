@@ -10,7 +10,7 @@ import Base.BaseClass;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
 
-public class TC_003_TopMenu extends BaseClass
+public class TC_003_TopMenu extends BaseClass 
 {
 	@Test
 	

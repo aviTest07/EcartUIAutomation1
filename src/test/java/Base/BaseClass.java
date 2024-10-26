@@ -1,13 +1,7 @@
 package Base;
 
-
-
 	import java.io.File;
-
-
-
 	import java.io.FileInputStream;
-
 	import java.io.IOException;
 	import java.text.SimpleDateFormat;
 	import java.time.Duration;
@@ -15,37 +9,22 @@ import java.util.ArrayList;
 import java.util.Date;
 	import java.util.Properties;
 	import java.util.ResourceBundle;
-	import java.util.logging.LogManager;
-
 	import org.apache.commons.io.FileUtils;
 	import org.apache.logging.log4j.Logger;
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.OutputType;
 	import org.openqa.selenium.TakesScreenshot;
 	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.chrome.ChromeOptions;
-	import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+	import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.WebDriverWait;
-	import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
+	import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-	import org.testng.annotations.Optional;
-	import org.testng.annotations.Parameters;
-	import org.testng.annotations.Test;
-
-	import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class BaseClass 
 	{
-		public static WebDriver driver;
+		public  WebDriver driver;
 		public static Logger logger;
 		public static Properties prop;
 		public static ResourceBundle rb;
@@ -57,10 +36,8 @@ import org.testng.annotations.BeforeTest;
 			PageFactory.initElements(driver,this);	
 		}
 		*/
-		
-		@Parameters("browser")
-		@BeforeSuite
-		public void setup(@Optional("chrome")String browser) throws IOException
+		@BeforeMethod(alwaysRun=true)
+		public void setup() throws IOException
 		{
 			//logger=LogManager.getLogger(this.getClass());  //logging
 			
@@ -72,9 +49,9 @@ import org.testng.annotations.BeforeTest;
 			prop=new Properties();
 			prop.load(fis);
 			
+			//String browser="chrome";
 			
-			
-			if(browser.equalsIgnoreCase("edge"))
+		/*	if(browser.equalsIgnoreCase("edge"))
 			{	
 			System.setProperty("Webdriver.edge.driver",System.getProperty("user.dir") +"\\Driver\\msedgedriver.exe");
 				//WebDriverManager.chromedriver().setup();
@@ -84,23 +61,17 @@ import org.testng.annotations.BeforeTest;
 			}
 			else if(browser.equalsIgnoreCase("chrome"))
 			{
-				System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir") +"\\src\\test\\Resources\\Drivers\\chromedriver.exe");
+				//System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir") +"\\src\\test\\Resources\\Drivers\\chromedriver.exe");
 				
-				ChromeOptions chromeOptions = new ChromeOptions();
+				//ChromeOptions chromeOptions = new ChromeOptions();
 
-				chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
-				
-				WebDriverManager.chromedriver().setup();
+				//chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+				*/
+//				WebDriverManager.chromedriver().setup();
 				driver= new ChromeDriver();
-			}
-			else
-			{
-				
-			}
-		
-
 			
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+			
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			driver.get(prop.getProperty("url"));
 			wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 			
@@ -140,13 +111,13 @@ import org.testng.annotations.BeforeTest;
 			return destination;
 		}
 		
-		public   void waitForElement(By by)
+		public void waitForElement(By by)
 		{
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		}
 		
-		@AfterSuite
+		@AfterMethod(alwaysRun=true)
 		public void tearDown()
 		{
 			driver.quit();

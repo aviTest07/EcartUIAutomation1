@@ -12,7 +12,7 @@ package PageObject;
 	public class LoginPage extends BaseClass
 	{
 		public LoginPage(WebDriver driver) {
-			//this.driver=driver;
+			this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
@@ -35,7 +35,6 @@ package PageObject;
 		public void clickSignIn()
 		{
 			signin.click();	
-			
 		}
 		
 		public LandingPage signingIn(String email,String password) throws InterruptedException

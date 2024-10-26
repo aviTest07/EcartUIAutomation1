@@ -26,7 +26,7 @@ import Base.BasePage;
 		
 
 		public LandingPage(WebDriver driver) {
-		//	this.driver=driver;
+			this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}

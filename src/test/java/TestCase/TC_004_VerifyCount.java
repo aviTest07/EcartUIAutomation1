@@ -39,7 +39,7 @@ public class TC_004_VerifyCount extends BaseClass
 		String getCount=prod.getCountofItems();
 		
 		Assert.assertEquals(getCount,prod.getProductCount());
-		Thread.sleep(3000);
+		
 	}
 	//verify the sorting filter by price
 	@Test(priority = 3)

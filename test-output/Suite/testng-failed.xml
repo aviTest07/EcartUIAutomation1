@@ -8,22 +8,11 @@
     <classes>
       <class name="TestCase.TC_006_CompareProdusts">
         <methods>
-          <include name="compareItems"/>
           <include name="tearDown"/>
           <include name="login"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestCase.TC_006_CompareProdusts -->
-      <class name="TestCase.TC_004_VerifyCount">
-        <methods>
-          <include name="verifyCount"/>
-          <include name="verifyWishListItem"/>
-          <include name="checkSortingoptions"/>
-          <include name="tearDown"/>
-          <include name="login"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCase.TC_004_VerifyCount -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

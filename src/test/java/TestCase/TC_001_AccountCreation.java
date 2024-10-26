@@ -38,6 +38,8 @@
 		@Test
 		public void validationmesasge()
 		{
+			hp=new Homepage(driver);
+			rd= new RegisterDetails(driver);
 			rd.logoutuser();
 			hp.openAccount();
 			String message= rd.checkvalidation();
@@ -48,6 +50,7 @@
 		@Test
 		public void verifypasswords() throws InterruptedException
 		{	
+			rd= new RegisterDetails(driver);
 		rd.enterDetailsVerifyPassword(prop.getProperty("name"),prop.getProperty("lastname"),prop.getProperty("email"),prop.getProperty("pass"),prop.getProperty("passc"));
 		String message= rd.getPasswordVaidationConfirmation();
 		Assert.assertEquals(message,prop.getProperty("passwordValidation"));

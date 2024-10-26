@@ -16,7 +16,7 @@
 	{
 		public static LandingPage pg;
 		
-		@Test(priority=1)
+		@Test
 		public void login() throws Exception
 		{
 			LoginPage lp=new LoginPage(driver);
@@ -26,7 +26,7 @@
 			String expected = driver.getTitle();
 			Assert.assertEquals("Home Page", expected);
 		}
-		@Test(priority=2)
+		@Test(dependsOnMethods = { "login"})
 		public void compareItems() throws Exception
 		{
 			pg=new LandingPage(driver);
@@ -35,16 +35,11 @@
 			prpage.addcompareItems();
 			
 			Assert.assertTrue(prpage.successMessages().contains(prop.getProperty("comparehoodieName1")));
-			
 			prpage.addcompareItems2();
 			Assert.assertTrue(prpage.successMessages().contains(prop.getProperty("comparehoodieName2")));
-			
 			ArrayList <String> checklist=prpage.getList();
 			Assert.assertTrue(checklist.contains(prop.getProperty("comparehoodieName1")));
 			Assert.assertTrue(checklist.contains(prop.getProperty("comparehoodieName2")));
-			
-			
-		
 		}
 	
 }

@@ -1,16 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite" parallel="tests">
+<suite name="TenNGparallel" parallel="tests">
 <listeners>
 <listener class-name="Util.ListenerClass"/>
 </listeners>
 <test thread-count="5" name="Test">
 <classes>
-
 <class name="TestCase.TC_006_CompareProdusts"/>
+</classes>
+</test>
+<test thread-count="5" name="Test2">
+<classes>
 <class name="TestCase.TC_004_VerifyCount"/>
 </classes>
 </test>
-
+<test thread-count="5" name="Tes3">
+<classes>
+<class name="TestCase.TC_003_TopMenu"/>
+</classes>
+</test>
 
 
 <!--  Test  -->
