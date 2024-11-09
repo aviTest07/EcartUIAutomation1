@@ -2,7 +2,8 @@ package PageObject;
 
 
 	import java.util.List;
-	import org.openqa.selenium.By;
+
+	
 	import org.openqa.selenium.Keys;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
@@ -10,11 +11,11 @@ package PageObject;
 import org.openqa.selenium.support.PageFactory;
 
 import Base.BaseClass;
-import Base.BasePage;
+
 
 	public class CartPage extends BaseClass 
 	{
-
+		WebDriver driver;
 		public CartPage(WebDriver driver) {
 			this.driver=driver;
 			PageFactory.initElements(driver,this);

@@ -21,12 +21,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import Base.BaseClass;
 import Base.BasePage;
 
-	public class LandingPage extends BaseClass {
+	public class LandingPage  {
 		
-		
+		WebDriver driver;
 
 		public LandingPage(WebDriver driver) {
-		//	this.driver=driver;
+		this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
@@ -50,11 +50,8 @@ import Base.BasePage;
 		List <WebElement> searchedProductList;
 		
 		
-		
 		@FindBy(xpath="//li[contains(@id,'qs-option')]")
 		List <WebElement> productList;
-		
-		
 		
 		
 		public ArrayList<String> verifytopMenu()

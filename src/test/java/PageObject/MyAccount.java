@@ -16,9 +16,10 @@ import org.testng.Assert;
 	import Base.BaseClass;
 	import Base.BasePage;
 
-	public class MyAccount extends BaseClass
+	public class MyAccount 
 	{
 
+		WebDriver driver;
 		public MyAccount(WebDriver driver) {
 			this.driver=driver;
 			PageFactory.initElements(driver,this);
@@ -82,7 +83,7 @@ import org.testng.Assert;
 		public void enterarating() throws InterruptedException
 		{
 			reviews.click();
-			waitForElement(ratings);
+			//waitForElement(ratings);
 			//Thread.sleep(5000);
 			Actions act=new Actions(driver);
 			act.moveToElement(rating).build().perform();

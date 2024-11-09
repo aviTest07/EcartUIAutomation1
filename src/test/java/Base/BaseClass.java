@@ -12,7 +12,8 @@ package Base;
 	import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
-	import java.util.Properties;
+import java.util.NoSuchElementException;
+import java.util.Properties;
 	import java.util.ResourceBundle;
 	import java.util.logging.LogManager;
 
@@ -28,10 +29,14 @@ import java.util.Date;
 	import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-	import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 	import org.testng.annotations.AfterClass;
-	import org.testng.annotations.BeforeClass;
-	import org.testng.annotations.Optional;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 	import org.testng.annotations.Parameters;
 	import org.testng.annotations.Test;
 
@@ -39,7 +44,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 	public class BaseClass 
 	{
-		public static WebDriver driver;
+		public  WebDriver driver;
 		public static Logger logger;
 		public static Properties prop;
 		public static ResourceBundle rb;
@@ -54,7 +59,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 		*/
 		
 		@Parameters("browser")
-		@BeforeClass
+		@BeforeTest
 		public void setup(@Optional("chrome")String browser) throws IOException
 		{
 			//logger=LogManager.getLogger(this.getClass());  //logging
@@ -130,16 +135,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 			return destination;
 		}
 		
-		public   void waitForElement(By by)
+		public  void waitForElement(By by)
 		{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		}
+		public void waitByfluentwait(By by)
+		{
+			Wait<WebDriver> wait=new FluentWait<WebDriver>(driver)
+					.pollingEvery(Duration.ofSeconds(0))
+					.withTimeout(Duration.ofSeconds(10))
+					.ignoring(NoSuchElementException.class);
+			
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+		}
 		
 		
 		
-		
-		@AfterClass
+		@AfterTest
 		public void tearDown()
 		{
 			driver.quit();

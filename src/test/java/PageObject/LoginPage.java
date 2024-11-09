@@ -9,10 +9,12 @@ package PageObject;
     import Base.BaseClass;
 //import Base.BasePage;
 
-	public class LoginPage extends BaseClass
+	public class LoginPage 
 	{
+	WebDriver driver;
+		
 		public LoginPage(WebDriver driver) {
-			//this.driver=driver;
+			this.driver=driver;
 			PageFactory.initElements(driver,this);
 			// TODO Auto-generated constructor stub
 		}
@@ -66,7 +68,7 @@ package PageObject;
 		
 		public boolean  getdimensionLength() {
 			int emaillen= emailId.getSize().getHeight();
-			 int emailWidth=	 emailId.getSize().getWidth();
+			 int emailWidth=emailId.getSize().getWidth();
 			int passlen= pass.getSize().getHeight();
 			int passWidth= pass.getSize().getWidth();
 			
