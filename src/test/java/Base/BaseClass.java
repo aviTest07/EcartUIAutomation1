@@ -140,6 +140,10 @@ import org.testng.annotations.Optional;
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		}
+		public void waitForElement(WebElement element) {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.visibilityOf(element));
+		}
 		public void waitByfluentwait(By by)
 		{
 			Wait<WebDriver> wait=new FluentWait<WebDriver>(driver)

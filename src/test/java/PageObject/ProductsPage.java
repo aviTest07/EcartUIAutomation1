@@ -87,7 +87,7 @@ import Base.BasePage;
 		
 		public String getCountofItems() throws InterruptedException
 		{
-			
+			waitForElement(jacketscount);
 			 String count=jacketscount.getText();
 			return count;
 		}
@@ -95,8 +95,9 @@ import Base.BasePage;
 		public String getProductCount()
 		{
 			int count=productprices.size();
+			count=count-1;
 			String procount= String.valueOf(count);
-			return procount;		
+			return procount;
 		}
 		
 		public boolean isSorted()

@@ -25,7 +25,7 @@ public class TC_004_VerifyCount extends BaseClass
 		lp=new LoginPage(driver);
 		lp.clickSignIn();
 		
-		lap=	lp.signingIn(prop.getProperty("email"),prop.getProperty("password"));
+		lap=lp.signingIn(prop.getProperty("email"),prop.getProperty("password"));
 		String expected = driver.getTitle();
 		Assert.assertEquals("Home Page", expected);
 	}
@@ -36,6 +36,7 @@ public class TC_004_VerifyCount extends BaseClass
 	{
 		lap=new LandingPage(driver);
 		prod=lap.selectItems();
+
 		String getCount=prod.getCountofItems();
 		
 		Assert.assertEquals(getCount,prod.getProductCount());
@@ -55,8 +56,6 @@ public class TC_004_VerifyCount extends BaseClass
 	{
 		prod= new ProductsPage(driver);
 		wishlist=prod.wishList();
-		
-		
 		Assert.assertEquals(wishlist.verifySuccessMessage(),"Proteus Fitness Jackshirt has been added to your Wish List. Click here to continue shopping.");
 	}
 	

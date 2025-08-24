@@ -31,7 +31,7 @@ import Base.BasePage;
 			// TODO Auto-generated constructor stub
 		}
 		
-		@FindBy(xpath="(//span[@class='ui-menu-icon ui-icon ui-icon-carat-1-e'])[4]/following-sibling::span")
+		@FindBy(xpath="(//span[@class='ui-menu-icon ui-icon ui-icon-carat-1-e'])[4]")
 		WebElement menSection;
 		
 		@FindBy(xpath="(//span[.='Tops'])[2]")
