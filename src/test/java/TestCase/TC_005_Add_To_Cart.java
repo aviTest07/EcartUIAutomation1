@@ -1,6 +1,7 @@
 
 	package TestCase;
 
+	import io.qameta.allure.*;
 	import org.openqa.selenium.By;
 
 
@@ -23,6 +24,7 @@
 		public static MyWishList mywishlis;
 		
 		@Test(priority = 1)
+		@Step("Login to application")
 		public void login() throws Exception
 		{
 			LoginPage lp=new LoginPage(driver);
@@ -30,10 +32,14 @@
 			
 			lp.signingIn(prop.getProperty("username"),prop.getProperty("passWord"));
 			String expected = driver.getTitle();
-			Assert.assertEquals("Home Page", expected);
+			Assert.assertEquals("Customer Login", expected);
 		}
-		
-		@Test(priority = 2)
+		@Test(description = " This test verifies the search of items",priority = 2)
+		@Description("This test verifies the search of items.")
+		@Severity(SeverityLevel.BLOCKER)
+		@Story("Total Products display")
+		@Step("Verify Search Item")
+
 		public void verifySerchItem() throws InterruptedException
 		{
 			pg=new LandingPage(driver);
@@ -59,6 +65,7 @@
 			Assert.assertEquals(cp.checkMessage(),prop.getProperty("addtocartSuccess"));
 			Assert.assertTrue(cp.checkart(prop.getProperty("hoodiename")));
 		}
+		@Step("Check text box")
 		@Test(priority = 3)
 		public void checktextBox()
 		{

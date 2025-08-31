@@ -3,7 +3,7 @@ package TestCase;
 import org.testng.Assert;
 
 import org.testng.annotations.Test;
-
+import io.qameta.allure.*;
 import Base.BaseClass;
 import PageObject.LandingPage;
 import PageObject.LoginPage;
@@ -12,12 +12,10 @@ import PageObject.ProductsPage;
 
 public class TC_004_VerifyCount extends BaseClass
 {
- 
 	public static LandingPage lap;
 	public static LoginPage lp;
 	public static ProductsPage prod;
 	public static	MyWishList wishlist;
-	
 	//Login the application
 	@Test(priority = 1)
 	public void login() throws Exception
@@ -31,7 +29,11 @@ public class TC_004_VerifyCount extends BaseClass
 	}
 	
 	//Verify the top menu
-	@Test(priority = 2)
+	@Test(description = " This test verifies the count of items displayed")
+	@Description("This test verifies the count of items displayed.")
+	@Severity(SeverityLevel.BLOCKER)
+	@Story("Total Products display")
+	@Feature("Authentication")
 	public void verifyCount() throws InterruptedException
 	{
 		lap=new LandingPage(driver);
@@ -52,6 +54,7 @@ public class TC_004_VerifyCount extends BaseClass
 	}
 	//verify that user is able to wishlist the item or not.
 	@Test(priority=4)
+
 	public void verifyWishListItem()
 	{
 		prod= new ProductsPage(driver);
