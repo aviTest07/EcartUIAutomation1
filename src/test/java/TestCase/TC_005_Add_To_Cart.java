@@ -35,7 +35,7 @@
 			Assert.assertEquals("Customer Login", expected);
 		}
 		@Test(description = " This test verifies the search of items",priority = 2)
-		@Description("This test verifies the search of items.")
+		@Description("This test verifies the search item in app.")
 		@Severity(SeverityLevel.BLOCKER)
 		@Story("Total Products display")
 		@Step("Verify Search Item")
