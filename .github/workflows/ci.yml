@@ -1,24 +1,48 @@
-name: CI Pipeline
+name: CI Pipeline with Allure
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]   # runs only when pushing to master
 
 jobs:
-  build:
+  build-test-report:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2. Setup Java
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: '17'
 
+      # 3. Cache Maven dependencies (optional, speeds up builds)
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # 4. Build the project
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
+      # 5. Run Tests
       - name: Run Tests
         run: mvn test
+
+      # 6. Generate Allure Report (Maven plugin must be in pom.xml)
+      - name: Generate Allure Report
+        run: mvn allure:report
+
+      # 7. Upload Allure Report as an artifact
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin
